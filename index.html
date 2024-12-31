@@ -192,7 +192,8 @@
         }
         @media (max-width: 768px) {
             #art-categories, .art-gallery {
-                grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Auto-fit for mobile */
+               grid-template-columns: 1fr; /* Single column for mobile */
+               
             }
         }
 
@@ -223,7 +224,8 @@
         }
         @media (max-width: 768px) {
             #art-categories, .art-gallery {
-                grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Auto-fit for mobile */
+                grid-template-columns: 1fr; /* Single column for mobile */
+                gap: 10px; /* Reduced gap for mobile screens */
             }
         }
 
@@ -241,10 +243,14 @@
             align-items: center;
             height: 500px;
             width: 100%;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         .art-title-box {
         padding: 5px 10px;
 }
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
 
 
         /* Floating Effect for Artworks */
