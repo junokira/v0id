@@ -258,6 +258,7 @@
             align-items: center;
             height: 500px;
             width: 100%;
+            aspect-ratio: 1/1;
             overflow-x: hidden; /* Prevent horizontal scrolling */
             aspect-ratio: 1/1;
         }
@@ -279,6 +280,7 @@
         .art-item img {
             width: 100%;
             height: 100%;
+            aspect-ratio: 1/1;
             object-fit: cover;
             object-position: top;
         }
@@ -840,10 +842,20 @@
             alert('SEND SIGNAL: COMING SOON!');
         }
 
-        // Flash face during reboot sequence
+        // Flash face during reboot sequence (improved)
         function flashRebootFace() {
             const loadingImage = document.getElementById('loading-image');
-            loadingImage.style.animation = 'invertStrobe 0.5s 4 alternate';
+            let flashCount = 0;
+            const maxFlashes = 5; // Number of flashes
+
+            const flashInterval = setInterval(() => {
+                loadingImage.style.visibility = loadingImage.style.visibility === 'hidden' ? 'visible' : 'hidden';
+                flashCount++;
+                if (flashCount >= maxFlashes) {
+                    clearInterval(flashInterval);
+                    loadingImage.style.visibility = 'visible'; // Ensure it's visible at the end
+                }
+            }, 200); // Adjust flash speed (milliseconds)
         }
 
         // Load 3D Model with Three.js
@@ -908,6 +920,16 @@
     </script>
         <script type="application/ld+json">
 {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "v0id | Art Terminal",
+  "url": "v0id.live",
+  "description": "Explore the experimental digital and physical artwork of v0id. An online art gallery showcasing unique visual experiences.",
+  "creator": {
+    "@type": "Person",
+    "name": "v0id"
+  }
+}
     </script>
 </body>
 </html>
