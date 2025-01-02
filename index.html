@@ -9,6 +9,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <style>
+    
+            /* Flash Warning */
+        #flash-warning {
+            position: fixed;
+            top: ;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: yellow;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            z-index: 10; /* Ensure it's on top */
+            display: none; /* Initially hidden */
+        }
         /* General Styles and CRT Effects */
         body {
             background: #b2b59c;
@@ -388,6 +403,10 @@
     </style>
 </head>
 <body>
+    
+    <div id="flash-warning">
+        WARNING: This website contains flashing images that may trigger seizures for people with photosensitive epilepsy. Viewer discretion is advised.
+    </div>
     <!-- Navigation Bar -->
     <nav>
         <img src="https://i.ibb.co/ZTVbnwx/Threshold-7.png" alt="v0id Header">
@@ -873,6 +892,22 @@
                 renderer.setSize(container.clientWidth, container.clientHeight);
             });
         }
+        // JavaScript for flash warning and other functionality
+        function showFlashWarning() {
+            document.getElementById('flash-warning').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('flash-warning').style.display = 'none';
+            }, 5000); // Hide after 5 seconds
+        }
+
+        window.onload = function() {
+            showFlashWarning();
+            // ... (Your other window.onload code)
+        };
+        // ... (rest of your JavaScript functions)
+    </script>
+        <script type="application/ld+json">
+{
     </script>
 </body>
 </html>
