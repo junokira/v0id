@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://v0id.live/sitemap.xml
