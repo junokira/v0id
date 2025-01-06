@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>v0id | Art Terminal</title>
+    <title>v0id | Art Portal</title>
     <meta name="description" content="Step into the world of v0id, where digital and physical art collide. A curated gallery of transformative visual journeys, exploring the depths of emotion, consciousness, and abstraction.">
     <link rel="icon" href="daaa.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
@@ -324,16 +324,17 @@
     <style>
         /* Flash Warning */
         #flash-warning {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding-bottom: env(safe-area-inset-bottom);
-    background-color: yellow; /* High visibility */
-    color: black;
-    text-align: center;
-    padding: 10px;
-    z-index: 101; /* Higher than the footer to appear on top */
-    display: none; /* Initially hidden */
+            position: fixed;
+            top: ;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: yellow;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            z-index: 10; /* Ensure it's on top */
+            display: none; /* Initially hidden */
         }
         /* General Styles and CRT Effects */
         body {
@@ -689,25 +690,18 @@
 
         /* Footer Status Bar */
         #footer-status {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding-bottom: env(safe-area-inset-bottom);
-    background: #000; /* Black background for contrast */
-    color: #b4b6a6;
-    text-align: center;
-    font-size: 0.8em;
-    padding: 5px;
-    z-index: 100; /* Ensure it stays on top of other elements */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: #b4b6a6;
+            background: #000;
+            text-align: center;
+            font-size: 0.8em;
+            padding: 5px 0;
+            z-index: 3;
+            animation: glitch-bar 10s infinite alternate;
         }
         
-        body {
-    padding-bottom: env(safe-area-inset-bottom);
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-}
-
-
         @keyframes glitch-bar {
             0%, 100% { content: "NO SIGNAL"; }
             25% { content: "ERROR: UNDEFINED BEAUTY"; }
