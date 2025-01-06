@@ -330,7 +330,7 @@
             position: fixed;
             top: ;
             left: 0;
-            bottom: 0;
+            bottom: 25px;
             width: 100%;
             background-color: yellow;
             color: black;
@@ -746,9 +746,9 @@
     </div>
 
     <!-- Loading Screen -->
-    <div id="loading-screen">
+  <div id="loading-screen">
         <div>
-            <img id="loading-image" src="https://i.imgur.com/OkkjGd2.png" alt="Loading Face">
+            <img id="loading-image" src="https://i.imgur.com/OkkjGd2.png" loading="lazy" alt="Loading Face">
             <p>LOADING...</p>
             <div class="loading-bar-container">
                 <div class="loading-bar"></div>
@@ -764,7 +764,7 @@
     <!-- Art Categories Gallery -->
     <div id="art-categories" style="display: none;">
         <div class="art-item" onclick="showDigitalArt()">
-            <img src="https://i.ibb.co/58KDzxW/hands.webp" alt="Digital Art">
+            <img src="https://i.ibb.co/58KDzxW/hands.webp" loading="lazy" alt="Digital Art">
             <div class="art-title-box">Digital Art</div>
         </div>
         <div class="art-item" onclick="show3DArt()">
@@ -776,6 +776,7 @@
             <div class="art-title-box">Physical Art</div>
         </div>
     </div>
+
 
     <!-- Digital Art Gallery -->
     <div id="digital-art-gallery" class="art-gallery" style="display: none;">
