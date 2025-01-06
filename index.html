@@ -324,17 +324,16 @@
     <style>
         /* Flash Warning */
         #flash-warning {
-            position: fixed;
-            top: ;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: yellow;
-            color: black;
-            text-align: center;
-            padding: 10px;
-            z-index: 10; /* Ensure it's on top */
-            display: none; /* Initially hidden */
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    background-color: yellow; /* High visibility */
+    color: black;
+    text-align: center;
+    padding: 10px;
+    z-index: 101; /* Higher than the footer to appear on top */
+    display: none; /* Initially hidden */
         }
         /* General Styles and CRT Effects */
         body {
@@ -690,17 +689,25 @@
 
         /* Footer Status Bar */
         #footer-status {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            color: #b4b6a6;
-            background: #000;
-            text-align: center;
-            font-size: 0.8em;
-            padding: 5px 0;
-            z-index: 3;
-            animation: glitch-bar 10s infinite alternate;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #000; /* Black background for contrast */
+    color: #b4b6a6;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+    z-index: 100; /* Ensure it stays on top of other elements */
         }
+        
+        body {
+    padding-bottom: 50px; /* Adjust based on footer height */
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+}
+
 
         @keyframes glitch-bar {
             0%, 100% { content: "NO SIGNAL"; }
@@ -1263,15 +1270,18 @@ function load3DModel(containerId, modelPath, adjustments = { scale: [1, 1, 1], p
     });
         }
         // JavaScript for flash warning and other functionality
-        function showFlashWarning() {
-            document.getElementById('flash-warning').style.display = 'block';
-            setTimeout(() => {
-                document.getElementById('flash-warning').style.display = 'none';
-            }, 5000); // Hide after 5 seconds
-        }
+function showFlashWarning() {
+    const flashWarning = document.getElementById('flash-warning');
+    flashWarning.style.display = 'block';
 
-        window.onload = function() {
-            showFlashWarning();
+    // Hide the warning after 5 seconds
+    setTimeout(() => {
+        flashWarning.style.display = 'none';
+    }, 5000);
+}
+
+window.onload = function () {
+    showFlashWarning();
             // ... (Your other window.onload code)
         };
         // ... (rest of your JavaScript functions)
