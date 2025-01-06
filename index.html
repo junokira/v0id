@@ -325,15 +325,13 @@
         /* Flash Warning */
         #flash-warning {
     position: fixed;
-    bottom: 0;
+    bottom: 25px; /* Set a fixed distance above the footer */
     width: 100%;
-    padding-bottom: env(safe-area-inset-bottom);
     background-color: yellow; /* High visibility */
     color: black;
     text-align: center;
     padding: 10px;
-    z-index: 101; /* Higher than the footer to appear on top */
-    display: none; /* Initially hidden */
+    z-index: 200; /* Higher than the footer */
         }
         /* General Styles and CRT Effects */
         body {
@@ -621,18 +619,7 @@
         .art-item:hover {
             animation: none;
             transform: none;
-        }
-
-        /* Placeholder for Art Galleries */
-        .placeholder {
-            width: 100%;
-            height: 100%;
-            background-color: #b2b59c;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-            color: #000;
+        
         }
 
         /* Strobe and High Contrast Effect for Artworks */
@@ -692,19 +679,20 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding-bottom: env(safe-area-inset-bottom);
     background: #000; /* Black background for contrast */
     color: #b4b6a6;
     text-align: center;
     font-size: 0.8em;
-    padding: 5px;
-    z-index: 100; /* Ensure it stays on top of other elements */
+    padding: 10px;
+    padding-bottom: env(safe-area-inset-bottom); /* Safe area padding for mobile devices */
+    z-index: 100; /* Below the warning */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Optional shadow for clarity */
         }
         
         body {
-    padding-bottom: env(safe-area-inset-bottom);
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    position: relative;
 }
 
 
