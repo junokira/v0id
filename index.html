@@ -325,9 +325,9 @@
         /* Flash Warning */
         #flash-warning {
     position: fixed;
-    bottom: 10px;
-    left: 0;
+    bottom: 0;
     width: 100%;
+    padding-bottom: env(safe-area-inset-bottom);
     background-color: yellow; /* High visibility */
     color: black;
     text-align: center;
@@ -691,8 +691,8 @@
         #footer-status {
     position: fixed;
     bottom: 0;
-    left: 0;
     width: 100%;
+    padding-bottom: env(safe-area-inset-bottom);
     background: #000; /* Black background for contrast */
     color: #b4b6a6;
     text-align: center;
@@ -702,10 +702,9 @@
         }
         
         body {
-    padding-bottom: 50px; /* Adjust based on footer height */
+    padding-bottom: env(safe-area-inset-bottom);
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    box-sizing: border-box;
 }
 
 
