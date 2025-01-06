@@ -325,13 +325,13 @@
         /* Flash Warning */
         #flash-warning {
     position: fixed;
-    bottom: 25px; /* Set a fixed distance above the footer */
+    bottom: 70px; /* Set a fixed distance above the footer */
     width: 100%;
     background-color: yellow; /* High visibility */
     color: black;
     text-align: center;
-    padding: 10px;
-    z-index: 200; /* Higher than the footer */
+    padding: 30px;
+    z-index: 300; /* Higher than the footer */
         }
         /* General Styles and CRT Effects */
         body {
@@ -686,18 +686,44 @@
 
         /* Footer Status Bar */
         #footer-status {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    position: fixed; /* Always fixed at the bottom */
+    bottom: 0; /* Start at the bottom */
+    width: 100%; /* Full width */
     background: #000; /* Black background for contrast */
-    color: #b4b6a6;
-    text-align: center;
-    font-size: 0.8em;
-    padding: 10px;
-    padding-bottom: env(safe-area-inset-bottom); /* Safe area padding for mobile devices */
-    z-index: 100; /* Below the warning */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Optional shadow for clarity */
+    color: #b4b6a6; /* Text color */
+    text-align: center; /* Center text */
+    font-size: 0.8em; /* Font size */
+    padding: 10px; /* Default padding */
+    padding-bottom: env(safe-area-inset-bottom); /* Adjust padding for mobile safe area */
+    z-index: 1000; /* Above main content */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Optional shadow */
         }
+
+/* Mobile Specific Footer Adjustments */
+@media (max-width: 768px) {
+    #footer-status {
+        bottom: calc(env(safe-area-inset-bottom) + 50px); /* Move above UI on mobile */
+        background: rgba(0, 0, 0, 0.9); /* Slightly transparent for better visibility */
+        font-size: 1em; /* Slightly larger text for readability */
+        padding: 15px 10px; /* More padding for touch */
+    }
+}
+
+/* Desktop Specific Footer Adjustments */
+@media (min-width: 768px) {
+    #footer-status {
+        bottom: 50px; /* Stick to the very bottom for desktop */
+        background: #000;
+        font-size: 0.8em;
+        box-shadow: none; /* Remove shadow for desktop */
+    }
+}
+
+/* Body Padding for Footer */
+body {
+    margin: 0;
+    padding-bottom: calc(50px + env(safe-area-inset-bottom)); /* Reserve space for footer */
+}
 
         @keyframes glitch-bar {
             0%, 100% { content: "NO SIGNAL"; }
