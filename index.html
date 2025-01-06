@@ -335,16 +335,19 @@
         }
         /* General Styles and CRT Effects */
         body {
-            background: #b2b59c;
-            color: #000;
-            font-family: 'Courier New', Courier, monospace;
-            overflow: hidden; /* Prevents scrolling for the entire page */
-            position: relative;
-            height: 100vh;
-            margin: 0;
-            filter: contrast(110%) brightness(95%);
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
+    background: #b2b59c;
+    color: #000;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    filter: contrast(110%) brightness(95%);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    
         }
 
         /* Enhanced CRT Scanline, Noise, and Flicker Effects */
@@ -589,11 +592,7 @@
             box-sizing: border-box;
             position: absolute; /* Ensure it stays at the bottom */
             bottom: 0;
-        }
 
-        body {
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
         }
 
         /* Floating Effect for Artworks */
@@ -619,7 +618,18 @@
         .art-item:hover {
             animation: none;
             transform: none;
-        
+        }
+
+        /* Placeholder for Art Galleries */
+        .placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #b2b59c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: #000;
         }
 
         /* Strobe and High Contrast Effect for Artworks */
@@ -688,13 +698,6 @@
     z-index: 100; /* Below the warning */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Optional shadow for clarity */
         }
-        
-        body {
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    position: relative;
-}
-
 
         @keyframes glitch-bar {
             0%, 100% { content: "NO SIGNAL"; }
@@ -702,6 +705,7 @@
             50% { content: "SIGNAL UNSTABLE..."; }
             75% { content: "DECODING ARTIFACTS..."; }
         }
+        
 
         /* Error Message Styling */
         .no-escape {
