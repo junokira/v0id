@@ -1284,10 +1284,9 @@
             }, 1000);
         }
 
-        // Send Signal Functionality
-        function openDiagnostics() {
-            document.getElementById('diagnostics-overlay').style.display = 'flex';
-        }
+  window.sendSignal = function() {
+                window.location.href = 'mind.html';
+            };
 
         function closeDiagnosticsOverlay() {
             document.getElementById('diagnostics-overlay').style.display = 'none';
