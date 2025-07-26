@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>v0id | Art Portal</title>
+    <title>v0id</title>
     <meta name="description" content="v0id is an anonymous artist redefining emotion and spirituality through Voidalism. Step into the unseen">
     <link rel="icon" href="daaa.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
@@ -798,7 +798,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(0, 0, 0, 0.95); /* Ensure black background */
             color: #b4b6a6;
             font-size: 20px;
             z-index: 5;
@@ -880,6 +880,7 @@
         <p>ARTIST: v0id</p>
         <p>STATUS: ONLINE</p>
         <p>SYSTEM: HUMAN</p>
+        <p>COUNTRY: South Africa</p> <!-- Added country information -->
         <button onclick="closeDiagnosticsOverlay()">EXIT SYSTEM</button>
     </div>
 
@@ -1155,6 +1156,7 @@
                 position: [0, -1, 0],
                 rotation: [0, 0, 0]
             });
+            showFlashWarning(); // Call flash warning on load
         };
 
         // Loading Screen Interaction
@@ -1284,16 +1286,17 @@
             }, 1000);
         }
 
-  window.sendSignal = function() {
-                window.location.href = 'mind.html';
-            };
+        // Updated sendSignal function to link to mind.v0id.live
+        function sendSignal() {
+            window.location.href = 'https://mind.v0id.live/';
+        }
+
+        function openDiagnostics() {
+            document.getElementById('diagnostics-overlay').style.display = 'flex';
+        }
 
         function closeDiagnosticsOverlay() {
             document.getElementById('diagnostics-overlay').style.display = 'none';
-        }
-
-        function sendSignal() {
-            alert('SEND SIGNAL: COMING SOON!');
         }
 
         // Flash face during reboot sequence (improved)
@@ -1392,12 +1395,6 @@ function load3DModel(containerId, modelPath, adjustments = { scale: [1, 1, 1], p
                 document.getElementById('flash-warning').style.display = 'none';
             }, 5000); // Hide after 5 seconds
         }
-
-        window.onload = function() {
-            showFlashWarning();
-            // ... (Your other window.onload code)
-        };
-        // ... (rest of your JavaScript functions)
 
     </script>
 </body>
